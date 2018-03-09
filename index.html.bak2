@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html lang='en' class=''>
+<head>
+<meta charset='UTF-8'>
+<style class="cp-pen-styles"></style>
+<link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+<div id="root"></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/react/16.2.0/umd/react.production.min.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.2.0/umd/react-dom.production.min.js'></script><script src='https://tympanus.net/Tutorials/PiecesSlider/js/anime.min.js'></script><script src='https://tympanus.net/Tutorials/PiecesSlider/js/pieces.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js'></script>
+<script type="text/babel" src="./js/script.js"></script>
+</body>
+</html>
