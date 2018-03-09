@@ -1,3 +1,6 @@
+### Preview
+![](./preview.gif)
+
 ### Live demo
 https://mjunaidi.github.io/react-codrops-slide-pieces/
 
