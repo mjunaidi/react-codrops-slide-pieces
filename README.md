@@ -12,11 +12,12 @@ https://codepen.io/mjunaidi/pen/qxemeJ
 ### Run command
 `node web-server.js`
 
-### Adding new images
-Put images in `img` directory of this project.
-
 ### View at
 `http://localhost:3000`
+
+### Adding new images
+1. Put images in `img` directory of this project.
+2. Update file `data/images.json`.
 
 ### Credits
 * https://tympanus.net/codrops/2018/02/21/animated-fragment-slideshow/

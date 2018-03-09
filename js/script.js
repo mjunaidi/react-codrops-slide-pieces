@@ -319,13 +319,7 @@ class Root extends React.Component {
         <button
           className="pieces-slider__button pieces-slider__button--next"
           onClick={(e)=>{
-            this.setState({viewIndex:this.state.viewIndex+1},()=>{
-              if (this.state.viewIndex>=this.state.slides.length/2) {
-                this.createSlides(10, ()=>{
-                  //sliderFn()
-                })
-              }
-            })
+            this.setState({viewIndex:this.state.viewIndex+1})
           }}
         >next</button>
       </div>
