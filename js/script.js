@@ -247,15 +247,27 @@ class Root extends React.Component {
     }
   }
   componentDidMount() {
-    const count = 10
-    this.createSlides(count, ()=>{
-      sliderFn()
+    this.loadFiles(images=>{
+      this.createSlides(images, ()=>{
+        sliderFn()
+      })
     })
   }
-  createSlides(n=10, callback) {
-    if (typeof(n)==='number'&&n>0) {
-      this.createSlide(()=>{
-        this.createSlides(n-1, callback)
+  loadFiles(callback) {
+    const url = './data/images.json'
+    fetch(url).then(response=>{
+      return response.json();
+    }).then(data=>{
+      if (typeof(callback)==='function') {
+        callback(data)
+      }
+    })
+  }
+  createSlides(images, callback) {
+    if (Array.isArray(images)&&images.length>0) {
+      this.createSlide(images[0], ()=>{
+        images.shift()
+        this.createSlides(images, callback)
       })
     } else {
       if (typeof(callback)==='function') {
@@ -263,7 +275,22 @@ class Root extends React.Component {
       }
     }
   }
-  createSlide(callback) {
+  createSlide(image, callback) {
+    if (typeof(image)==='object'&&image!==null) {
+      const slides = this.state.slides
+      const slide = {
+        name: image.name||image.src,
+        src: `./img/${image.src}`,
+      }
+      slides.push(slide)
+      this.setState({slides:slides}, ()=>{
+        if (typeof(callback)==='function') {
+          callback()
+        }
+      })
+    }
+  }
+  createRandomSlide(callback) {
     const slides = this.state.slides
     const slide = {
       name: lipsum(3),
